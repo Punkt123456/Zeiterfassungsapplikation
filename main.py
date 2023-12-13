@@ -1,40 +1,19 @@
-import datetime
+from flask import Flask, render_template, request
 
-class TimeTracker:
-    def __init__(self):
-        self.start_time = None
-        self.end_time = None
+app = Flask(__name__)
 
-    def start(self):
-        if self.start_time is not None:
-            print("Die Zeiterfassung läuft bereits.")
-        else:
-            self.start_time = datetime.datetime.now()
-            print("Zeiterfassung gestartet um", self.start_time)
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    def stop(self):
-        if self.start_time is None:
-            print("Die Zeiterfassung wurde nicht gestartet.")
-        else:
-            self.end_time = datetime.datetime.now()
-            print("Zeiterfassung gestoppt um", self.end_time)
-            elapsed_time = self.end_time - self.start_time
-            print("Dauer:", elapsed_time)
+@app.route('/submit', methods=['POST'])
+def submit():
+    task = request.form.get('task')
+    hours = request.form.get('hours')
 
-if __name__ == "__main__":
-    tracker = TimeTracker()
-    while True:
-        print("\nZeiterfassungsoptionen:")
-        print("1. Start")
-        print("2. Stop")
-        print("3. Beenden")
-        choice = input("Wählen Sie eine Option: ")
+    # Hier kannst du mit den Daten arbeiten, z.B. in eine Datenbank speichern
 
-        if choice == "1":
-            tracker.start()
-        elif choice == "2":
-            tracker.stop()
-        elif choice == "3":
-            break
-        else:
-            print("Ungültige Option. Bitte wählen Sie erneut.")
+    return f'Daten empfangen: Aufgabe - {task}, Stunden - {hours}'
+
+if __name__ == '__main__':
+    app.run(debug=True)
