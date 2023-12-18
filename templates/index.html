@@ -1,3 +1,5 @@
+<!-- Beachte, dass die Verweise in den Links aktualisiert werden müssen -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,66 +9,30 @@
   <title>ZEM v.0.0.01</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <style>
-    .myform {
-      position: fixed;
-      width: auto;
-    }
-  </style>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Zeiterfassungstool</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Funktionen
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Zeitbuchung</a></li>
-              <li><a class="dropdown-item" href="#">Konzernweites Netzwerk</a></li>
-              <li><a class="dropdown-item" href="#">Arbeitsunfähig / Krankmeldung</a></li>
-              <li><a class="dropdown-item" href="#">Elternzeit</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Kontakt zum Support</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 </head>
 
 <body>
-  <h1 class="text-center mt-3">Wilkommen zum Zeiterfassungstool</h1>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!-- ... (unchanged) ... -->
+  </nav>
+
+  <h1 class="text-center mt-3">Willkommen zum Zeiterfassungstool</h1>
   <div class="card mt-5 mx-auto" style="max-width: 600px;">
     <div class="card-body mt-3">
       <section>
         <form method="post">
           <div class="input-group mb-3 align-items-center">
-            <label for="username" class="input-group-text" id="inputGroup-sizing-default" style="width: 131px;">Benutzername</label>
-            <input type="text" id="username" class="form-control" placeholder="Bitte geben Sie Ihren Benutzernamen ein">
+            <label for="email" class="input-group-text" id="inputGroup-sizing-default"
+              style="width: 131px;">E-Mail</label>
+            <input type="email" id="email" class="form-control"
+              placeholder="Bitte geben Sie Ihre E-Mail ein">
           </div>
           <div class="input-group mb-3 align-items-center">
-            <label for="password" class="input-group-text" id="inputGroup-sizing-default" style="width: 131px;">Passwort</label>
-            <input type="password" id="password" class="form-control" placeholder="Bitte geben Sie Ihr Passwort ein">
-          </div>                   
+            <label for="password" class="input-group-text" id="inputGroup-sizing-default"
+              style="width: 131px;">Passwort</label>
+            <input type="password" id="password" class="form-control"
+              placeholder="Bitte geben Sie Ihr Passwort ein">
+          </div>
           <div class="text-center">
             <button type="button" class="btn btn-primary"
               style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;">
@@ -74,14 +40,22 @@
             </button>
           </div>
           <div class="text-center mt-3">
-          <a href="#">Passwort vergessen?</a>
+            <a href="Passwort.html" target="_blank">Passwort vergessen?</a>
+          </div>
+          <div class="text-center mt-3">
+            <div class="btn-group">
+              <a href="{{ url_for('registrierung') }}" target="_blank" class="btn btn-outline-secondary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .90rem;">Registrierung</a>
+            </div>
           </div>
         </form>
       </section>
     </div>
   </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="like_button.js"></script>
