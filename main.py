@@ -50,8 +50,8 @@ def login():
 @app.route('/registrierung')
 def registrierung():
     return render_template('Registrierung.html')
-
-app.route('/passwort')
+# Route für die Passwort vergessen Seite
+@app.route('/passwort')
 def passwort():
     return render_template('passwort.html')
 
