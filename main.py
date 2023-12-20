@@ -41,10 +41,15 @@ def login():
 
     user = User.query.filter_by(email=email).first()
 
-    if user and check_password_hash(user.password_hash, password):
+    if user is not None and check_password_hash(user.password_hash, password):
+        print("Anmeldung erfolgreich")
         return redirect(url_for('dashboard', email=email))
     else:
+        print("Falsche E-Mail oder Passwort")
+        if user is not None:
+            print("Passwort-Hash aus der Datenbank:", user.password_hash)
         return 'Falsche E-Mail oder Passwort'
+
 
 # Route für die Registrierungsseite
 @app.route('/registrierung')
@@ -54,6 +59,10 @@ def registrierung():
 @app.route('/passwort')
 def passwort():
     return render_template('passwort.html')
+# Route für das Dashboard
+@app.route('/dashboard')
+def dashboard():
+    return render_template('Dashboard.html')
 
 # Route zum Verarbeiten des Registrierungsformulars
 @app.route('/register', methods=['POST'])

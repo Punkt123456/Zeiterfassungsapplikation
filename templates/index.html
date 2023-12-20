@@ -20,38 +20,36 @@
     <div class="card mt-5 mx-auto" style="max-width: 600px;">
       <div class="card-body mt-3">
         <section>
-          <form method="post">
-
+          <form method="post" action="/login">
+            
             <div class="input-group mb-3 align-items-center">
-              <label for="email" class="input-group-text" id="inputGroup-sizing-default"
-                style="width: 131px;">E-Mail</label>
-              <input type="email" id="email" class="form-control" placeholder="Bitte geben Sie Ihre E-Mail ein">
+                <label for="email" class="input-group-text" id="inputGroup-sizing-default" style="width: 131px;">E-Mail</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Bitte geben Sie Ihre E-Mail ein">
             </div>
-
+        
             <div class="input-group mb-3 align-items-center">
-              <label for="password" class="input-group-text" id="inputGroup-sizing-default"
-                style="width: 131px;">Passwort</label>
-              <input type="password" id="password" class="form-control" placeholder="Bitte geben Sie Ihr Passwort ein">
+                <label for="password" class="input-group-text" id="inputGroup-sizing-default" style="width: 131px;">Passwort</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Bitte geben Sie Ihr Passwort ein">
             </div>
-
+        
             <div class="text-center">
-              <button type="button" class="btn btn-primary">
-                Anmeldung
-              </button>
+                <button type="submit" class="btn btn-primary">
+                    Anmeldung
+                </button>
             </div>
+        </form>
+        
+          <div class="text-center mt-3">
+            <a href="{{ url_for('passwort') }}" target="_blank">Passwort vergessen?</a>
+          </div>
 
-            <div class="text-center mt-3">
-              <a href="{{ url_for('passwort') }}" target="_blank">Passwort vergessen?</a>
+          <div class="text-center mt-3">
+            <div class="btn-group">
+              <a href="{{ url_for('registrierung') }}" target="_blank" class="btn btn-outline-secondary">
+                Registrierung
+              </a>
             </div>
-
-            <div class="text-center mt-3">
-              <div class="btn-group">
-                <a href="{{ url_for('registrierung') }}" target="_blank" class="btn btn-outline-secondary">
-                  Registrierung
-                </a>
-              </div>
-            </div>
-          </form>
+          </div>
         </section>
       </div>
     </div>
