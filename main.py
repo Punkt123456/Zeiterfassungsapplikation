@@ -51,6 +51,10 @@ def login():
 def registrierung():
     return render_template('Registrierung.html')
 
+app.route('/passwort')
+def passwort():
+    return render_template('passwort.html')
+
 # Route zum Verarbeiten des Registrierungsformulars
 @app.route('/register', methods=['POST'])
 def register():
